@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#123B6D" />
+  <meta name="description" content="Detailed scheme information, eligibility criteria, required documents, and application steps." />
+  <title>Scheme Details | SmartSeva AP</title>
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Header with Back to Matching Schemes navigation -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="SmartSeva AP home">
+        <img src="logo.png" alt="SmartSeva AP Logo" class="site-logo" />
+        <span class="site-title">
+          <strong>SMARTSEVA <b>AP</b></strong>
+          <span>Government scheme discovery</span>
+        </span>
+      </a>
+      <a class="header-link action-back" href="results.html">
+        <span aria-hidden="true">←</span> Back to Matching Schemes
+      </a>
+    </div>
+  </header>
+
+  <!-- Page 3: Scheme Details Stage -->
+  <main class="page-container">
+    <div class="details-stage">
+      
+      <!-- Top Action Navigation -->
+      <div class="stage-top-nav">
+        <a class="back-link" href="results.html">
+          <span aria-hidden="true">←</span> Back to Matching Schemes
+        </a>
+      </div>
+
+      <!-- Empty State: Scheme Not Found / Invalid Session -->
+      <section class="empty-state-box" id="detailsNotFound" hidden>
+        <span class="empty-state-icon" aria-hidden="true">📋</span>
+        <h2>Scheme details unavailable</h2>
+        <p>Return to your matching schemes and select a scheme to explore its full requirements.</p>
+        <a class="button button-primary" href="results.html">Back to Matching Schemes</a>
+      </section>
+
+      <!-- Scheme Details Container -->
+      <div id="schemeDetails" hidden>
+        
+        <!-- Scheme Details Hero -->
+        <section class="details-hero-banner" aria-labelledby="detailName">
+          <span class="page-kicker" id="detailCategory">CATEGORY</span>
+          <h1 id="detailName">Scheme Name</h1>
+          <p class="details-hero-summary" id="detailShortDescription">Short overview of the scheme and its primary objectives.</p>
+          <span class="match-badge">
+            <span aria-hidden="true">✓</span> Potential Match
+          </span>
+        </section>
+
+        <!-- Two-Column Layout -->
+        <div class="details-content-grid" style="margin-top: 26px;">
+          
+          <!-- Left Column: Main Information -->
+          <div class="details-main-column">
+            
+            <!-- About This Scheme & Benefits -->
+            <section class="info-card" aria-labelledby="aboutSchemeTitle">
+              <h2 class="info-card-title" id="aboutSchemeTitle">About This Scheme</h2>
+              <p class="info-card-text" id="detailDescription"></p>
+
+              <h3 class="sub-section-title">Key Benefits</h3>
+              <ul class="icon-check-list" id="benefitsList"></ul>
+            </section>
+
+            <!-- Eligibility Criteria -->
+            <section class="info-card" aria-labelledby="eligibilityCriteriaTitle">
+              <h2 class="info-card-title" id="eligibilityCriteriaTitle">Eligibility Criteria</h2>
+              <dl class="criteria-grid" id="eligibilityList"></dl>
+              <p class="criteria-disclaimer">
+                These criteria reflect the conditions defined in our catalog. Official guidelines may contain additional verification parameters.
+              </p>
+            </section>
+
+            <!-- Documents Required (HIGH PRIORITY) -->
+            <section class="documents-card" aria-labelledby="documentsTitle">
+              <p class="panel-tag">BEFORE YOU APPLY</p>
+              <h2 class="info-card-title" id="documentsTitle">📄 Documents Required</h2>
+              <p class="documents-lead">Keep these documents ready and verify them before submitting your application.</p>
+              
+              <!-- Document Progress Indicator -->
+              <div class="doc-progress-container" id="docProgressContainer" hidden>
+                <div class="doc-progress-header">
+                  <span class="doc-progress-label" id="docProgressText">0 of 0 documents checked</span>
+                  <span class="doc-progress-percentage" id="docProgressPercent">0%</span>
+                </div>
+                <div class="doc-progress-track">
+                  <div class="doc-progress-fill" id="docProgressFill" style="width: 0%;"></div>
+                </div>
+                <span class="doc-progress-note">Preliminary check progress. Not an official government verification.</span>
+              </div>
+
+              <!-- Document Cards List -->
+              <div class="doc-cards-list" id="documentsList" hidden></div>
+              <p class="info-card-text" id="documentsMessage" style="color: var(--text-secondary); font-style: italic;"></p>
+            </section>
+
+            <!-- How to Apply -->
+            <section class="info-card" aria-labelledby="howToApplyTitle">
+              <h2 class="info-card-title" id="howToApplyTitle">How to Apply</h2>
+              <ol class="numbered-steps-list" id="applicationSteps" hidden></ol>
+              <p class="info-card-text" id="applicationMessage" style="color: var(--text-secondary);"></p>
+            </section>
+
+          </div>
+
+          <!-- Right Column: Sidebar Quick Information & Actions -->
+          <aside class="details-sidebar-column">
+            
+            <!-- Quick Information Card -->
+            <section class="quick-info-card" aria-labelledby="quickInfoTitle">
+              <h2 class="info-card-title" id="quickInfoTitle">Quick Information</h2>
+              <dl class="quick-info-list">
+                <div class="quick-info-row">
+                  <dt>Category</dt>
+                  <dd id="quickCategory">—</dd>
+                </div>
+                <div class="quick-info-row">
+                  <dt>Listed Benefit</dt>
+                  <dd id="quickBenefit">—</dd>
+                </div>
+                <div class="quick-info-row">
+                  <dt>State</dt>
+                  <dd id="quickState">Andhra Pradesh</dd>
+                </div>
+                <div class="quick-info-row">
+                  <dt>Application Mode</dt>
+                  <dd id="quickMode">Online / Sachivalayam</dd>
+                </div>
+              </dl>
+            </section>
+
+            <!-- Ready to Apply CTA Card -->
+            <section class="apply-action-card" aria-labelledby="readyToApplyTitle">
+              <span class="page-kicker" style="font-size: 11px;">NEXT STEP</span>
+              <h3 id="readyToApplyTitle">Ready to Apply?</h3>
+              <p>Continue through the official government portal to initiate or verify your application.</p>
+              <a 
+                class="button button-primary" 
+                id="officialLink" 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Visit Official Website <span aria-hidden="true">↗</span>
+              </a>
+            </section>
+
+          </aside>
+
+        </div>
+
+        <!-- Important Information Notice -->
+        <aside class="notice-box" style="margin-top: 28px;">
+          <span class="notice-icon" aria-hidden="true">ℹ</span>
+          <div class="notice-content">
+            <strong>Important Information</strong>
+            <p>
+              SmartSeva AP provides potential scheme matches based on the information entered and the eligibility criteria available in its scheme database. The final eligibility decision, document requirements, application process, and approval are determined by the respective government department or scheme authority. Please verify the latest information on the official government portal before applying.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       MODAL 1: UPLOAD & PREVIEW DOCUMENT MODAL
+       ========================================================================== -->
+  <div class="doc-modal-overlay" id="docUploadModal" hidden role="dialog" aria-modal="true" aria-labelledby="uploadModalTitle">
+    <div class="doc-modal">
+      <div class="doc-modal-header">
+        <h2 class="doc-modal-title" id="uploadModalTitle">Check Document</h2>
+        <button class="doc-modal-close" id="closeUploadModal" aria-label="Close dialog">&times;</button>
+      </div>
+
+      <div class="doc-modal-body">
+        <p style="font-size: 14px; color: var(--text-secondary);" id="uploadModalSubtitle">
+          Upload a clear image of your document.
+        </p>
+
+        <!-- Dropzone View (Visible before image selection) -->
+        <div id="dropzoneView">
+          <div class="upload-dropzone" id="dropzoneArea">
+            <span class="upload-icon" aria-hidden="true">📄</span>
+            <span class="upload-title">Upload Image</span>
+            <span class="upload-subtitle">Drag &amp; Drop or Browse</span>
+            <span class="upload-limits">JPG / JPEG / PNG &bull; Maximum 5 MB</span>
+            <input 
+              type="file" 
+              id="fileInput" 
+              accept="image/jpeg,image/png,image/jpg" 
+              capture="environment" 
+              style="display: none;" 
+            />
+          </div>
+        </div>
+
+        <!-- Preview View (Visible after image selection) -->
+        <div id="previewView" hidden>
+          <div class="doc-preview-wrapper">
+            <img id="previewImage" class="doc-preview-img" alt="Document Preview" />
+          </div>
+          <div class="preview-actions" style="margin-top: 12px;">
+            <button class="button button-secondary" id="changeImageBtn" type="button" style="height: 42px; font-size: 13px;">
+              Change Image
+            </button>
+          </div>
+        </div>
+
+        <div class="upload-privacy-msg">
+          Upload only the document required for this check. AI analysis provides a preliminary assessment.
+        </div>
+
+        <p class="form-status-message" id="uploadStatusMessage" hidden style="margin-top: 4px;"></p>
+      </div>
+
+      <div class="doc-modal-footer">
+        <button class="button button-secondary" id="cancelUploadBtn" type="button" style="height: 44px;">
+          Cancel
+        </button>
+        <button class="button button-primary" id="analyzeDocBtn" type="button" disabled style="height: 44px;">
+          Analyze Document
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 2: VIEW ANALYSIS BREAKDOWN MODAL
+       ========================================================================== -->
+  <div class="doc-modal-overlay" id="docAnalysisModal" hidden role="dialog" aria-modal="true" aria-labelledby="analysisModalTitle">
+    <div class="doc-modal">
+      <div class="doc-modal-header">
+        <h2 class="doc-modal-title" id="analysisModalTitle">Preliminary Document Analysis</h2>
+        <button class="doc-modal-close" id="closeAnalysisModal" aria-label="Close dialog">&times;</button>
+      </div>
+
+      <div class="doc-modal-body" id="analysisModalContent">
+        <!-- Injected dynamically by scheme-details.js -->
+      </div>
+
+      <div class="doc-modal-footer">
+        <button class="button button-secondary" id="closeAnalysisBtn" type="button" style="height: 44px;">
+          Close
+        </button>
+        <button class="button button-primary" id="recheckDocBtn" type="button" style="height: 44px;">
+          Upload Again
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>SmartSeva AP · Government Scheme Discovery Portal</span>
+      <span>Not an official eligibility decision</span>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/scheme-details.js"></script>
+</body>
+</html>

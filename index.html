@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#123B6D" />
+  <meta name="description" content="Find Andhra Pradesh government welfare and empowerment schemes you may be eligible for using SmartSeva AP." />
+  <title>SmartSeva AP - Government Scheme Eligibility Checker</title>
+  
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="SmartSeva AP home">
+        <img src="logo.png" alt="SmartSeva AP Logo" class="site-logo" />
+        <span class="site-title">
+          <strong>SMARTSEVA <b>AP</b></strong>
+          <span>Government scheme discovery</span>
+        </span>
+      </a>
+      <nav class="header-nav" aria-label="Main Navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="#about-service">Help</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page 1: Eligibility Form Stage -->
+  <main class="page-container">
+    <section class="eligibility-stage">
+      <div class="hero-header">
+        <span class="page-kicker">ANDHRA PRADESH · PUBLIC BENEFIT FINDER</span>
+        <h1>Find Government Schemes You May Be Eligible For</h1>
+        <p>Enter a few basic details and discover government schemes that may match your profile.</p>
+      </div>
+
+      <div class="form-card">
+        <h2 class="form-card-title">Your Details</h2>
+        <p class="form-card-subtitle">All fields except your name are required for scheme matching.</p>
+        
+        <form id="eligibilityForm" novalidate>
+          <div class="form-grid">
+            <!-- Full Name (Optional) -->
+            <div class="form-group form-group-full">
+              <label class="form-label" for="name">
+                Full Name
+                <span class="optional-tag">Optional</span>
+              </label>
+              <input 
+                class="form-input" 
+                id="name" 
+                name="name" 
+                type="text" 
+                autocomplete="name" 
+                placeholder="Enter your name" 
+              />
+            </div>
+
+            <!-- Age (Required) -->
+            <div class="form-group">
+              <label class="form-label" for="age">Age</label>
+              <input 
+                class="form-input" 
+                id="age" 
+                name="age" 
+                type="number" 
+                min="0" 
+                max="120" 
+                step="1" 
+                placeholder="Enter your age" 
+                required 
+              />
+            </div>
+
+            <!-- Gender (Required) -->
+            <div class="form-group">
+              <label class="form-label" for="gender">Gender</label>
+              <select class="form-select" id="gender" name="gender" required>
+                <option value="" disabled selected>Select gender</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- Annual Income (Required) -->
+            <div class="form-group">
+              <label class="form-label" for="annualIncome">Annual Household Income</label>
+              <div class="input-container has-prefix">
+                <span class="input-prefix" aria-hidden="true">₹</span>
+                <input 
+                  class="form-input" 
+                  id="annualIncome" 
+                  name="annualIncome" 
+                  type="number" 
+                  min="0" 
+                  step="1" 
+                  placeholder="Enter annual income" 
+                  required 
+                />
+              </div>
+            </div>
+
+            <!-- Area (Required) -->
+            <div class="form-group">
+              <label class="form-label" for="ruralUrban">Area</label>
+              <select class="form-select" id="ruralUrban" name="ruralUrban" required>
+                <option value="" disabled selected>Rural / Urban</option>
+                <option value="rural">Rural</option>
+                <option value="urban">Urban</option>
+              </select>
+            </div>
+          </div>
+
+          <p class="form-status-message" id="formStatus" role="status" aria-live="polite" hidden></p>
+          
+          <button class="button button-primary form-submit-btn" id="checkEligibility" type="submit" disabled>
+            Check Eligibility <span aria-hidden="true">→</span>
+          </button>
+        </form>
+
+        <div class="trust-badge">
+          <span aria-hidden="true">🔒</span>
+          <span>Your information is used only to find potentially matching schemes in this application.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Help / About Service note -->
+    <aside class="notice-box" id="about-service" style="max-width: 650px; margin: 32px auto 0;">
+      <span class="notice-icon" aria-hidden="true">ℹ</span>
+      <div class="notice-content">
+        <strong>About SmartSeva AP</strong>
+        <p>SmartSeva AP evaluates basic criteria such as age, household income, gender, and area of residence against Andhra Pradesh public welfare schemes to highlight programs you may be eligible to explore.</p>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>SmartSeva AP · Government Scheme Discovery Portal</span>
+      <span>Potential matches only · Verify with official authorities</span>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/logic.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
