@@ -1,4 +1,4 @@
-# SmartSeva AP 🇮🇳
+# SmartSeva AP
 ### Intelligent Government Scheme Eligibility & AI Document Verification Portal
 
 > **A modern, citizen-first web application designed for Andhra Pradesh citizens to easily discover government welfare schemes they are eligible for, understand exact application steps, and verify their supporting documents using AI before applying.**
